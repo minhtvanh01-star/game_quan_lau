@@ -1,0 +1,18 @@
+---
+description: Ràng buộc trước khi commit/push — format, test, secret, scope
+alwaysApply: true
+---
+
+# Git Push Gate
+
+Trước mọi `git push` / PR lên `main`/`dev`:
+
+1. Chạy `pwsh ./scripts/pre-push-check.ps1` (hoặc hook pre-push).
+2. Format C# nếu có thay đổi `*.cs` (dotnet format / IDE format theo `.editorconfig`).
+3. Chạy test liên quan; không đẩy khi fail.
+4. Không commit: `.env`, API keys, `google-services.json` secret, cert, mật khẩu.
+5. Diff không mở P2 (multiplayer, chuỗi chi nhánh, LLM mọi frame) trừ change request.
+6. Commit message rõ: `feat|fix|docs|chore|test|refactor(scope): ...`
+7. Push chỉ khi user yêu cầu tường minh (agent không tự push).
+
+Nếu Unity project chưa có: script được phép **warn** và pass phần test/format còn thiếu, nhưng vẫn fail khi phát hiện secret.

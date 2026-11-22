@@ -1,0 +1,29 @@
+---
+description: Khóa phạm vi MVP P0 — luôn áp dụng cho mọi thay đổi sản phẩm/code
+alwaysApply: true
+---
+
+# MVP Scope Lock
+
+Nguồn: `docs/01-nghien-cuu-kha-thi-game-quan-lau.md`
+
+## Được làm (P0)
+
+- 1 quán cuối ngõ, 6–8 bàn
+- Chủ quán điều khiển trực tiếp + staff auto cơ bản
+- Buffet cơ bản + gọi món (order pipeline)
+- Kho hết hàng, báo cáo ngày, nợ tối thiểu
+- 5 nhóm khách; cảm xúc số (hài lòng / kiên nhẫn)
+- Quest Chương 1 (gia đình trả nợ)
+
+## Không làm trong MVP (từ chối hoặc chuyển P2)
+
+- Chuỗi chi nhánh, bản đồ thành phố, multiplayer
+- DLC đa quốc gia, photoreal, season pass phức tạp
+- LLM cho mọi hành động khách (chỉ C2 theo event)
+
+## Khi user yêu cầu ngoài P0
+
+1. Nêu rõ feature thuộc P1/P2.
+2. Đề xuất phiên bản P0 hẹp hơn nếu có.
+3. Không implement P2 trừ khi user xác nhận change request tường minh.

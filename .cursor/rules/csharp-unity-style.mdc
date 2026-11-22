@@ -1,0 +1,32 @@
+---
+description: Chuẩn C# / Unity cho gameplay simulation
+globs: "**/*.{cs,asmdef}"
+alwaysApply: false
+---
+
+# C# / Unity Style
+
+## Style
+
+- 4 spaces, UTF-8, LF ưu tiên (EditorConfig là nguồn)
+- `PascalCase` public API; `_camelCase` private fields
+- Không dùng `FindObjectOfType` trong `Update`
+- Logic sim thuần (economy/order/customer stats) tách khỏi MonoBehaviour khi có thể — dễ unit test
+
+## Cấu trúc thư mục mục tiêu
+
+```text
+Assets/Scripts/
+  Core/           # day loop, time, save
+  Restaurant/     # table, kitchen, buffet, order
+  Economy/        # revenue, debt, inventory costs
+  Customers/      # stats, BT/FSM, memory
+  AI/             # gateway C2 client only
+  UI/
+  Staff/
+```
+
+## Test
+
+- Mỗi thay đổi công thức số → Edit Mode / NUnit test tương ứng
+- Không merge nếu test liên quan fail

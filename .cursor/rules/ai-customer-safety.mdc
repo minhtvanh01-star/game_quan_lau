@@ -1,0 +1,36 @@
+---
+description: An toàn AI khách hàng — simulation là nguồn sự thật, LLM chỉ C2
+globs: "**/*{Ai,AI,Customer,Dialogue,Prompt}*"
+alwaysApply: false
+---
+
+# AI Customer Safety
+
+## Ba tầng bắt buộc
+
+| Cấp | Dùng khi | Công nghệ |
+|-----|----------|-----------|
+| C0 | Đi/ngồi/ăn/chờ/thanh toán | FSM / Behavior Tree |
+| C1 | Thoại ngắn thường | Template + biến ngữ cảnh |
+| C2 | Khiếu nại, tư vấn phức tạp, VIP | LLM qua **backend** + JSON schema |
+
+## Cấm
+
+- Gọi LLM mỗi frame / mỗi hành động nhỏ
+- AI tự đổi tiền, tạo món ngoài menu, giảm giá ngoài whitelist
+- API key trong client Unity / repo
+
+## Hợp đồng response C2
+
+```json
+{
+  "customer_id": "CUS_001",
+  "intent": "complaint",
+  "emotion": "angry",
+  "dialogue": "...",
+  "suggested_actions": ["apologize", "check_order", "offer_compensation"],
+  "emotion_delta": -5
+}
+```
+
+Game validate action ∈ whitelist trước khi áp dụng. Sai schema → fallback template C1.

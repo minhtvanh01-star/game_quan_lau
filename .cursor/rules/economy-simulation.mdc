@@ -1,0 +1,25 @@
+---
+description: Quy tắc kinh tế buffet/gọi món và hệ thống nợ
+globs: "**/*{Economy,Buffet,Finance,Debt,Inventory,Order}*"
+alwaysApply: false
+---
+
+# Economy Simulation
+
+## Công thức cốt lõi
+
+- `Profit = Revenue - Expenses`
+- Revenue = buffet tickets + à la carte + drinks
+- Expenses = ingredients + staff + ops + marketing + spoilage
+- Buffet: doanh thu theo **vé**; chi phí theo **lượng tiêu thụ thực**
+
+## Bắt buộc khi sửa economy
+
+1. Cập nhật / thêm unit test số (Edit Mode nếu Unity).
+2. Không hard-code “luôn lời” hoặc cheat cảm xúc.
+3. Nợ định kỳ: áp lực gameplay, không game-over cứng ở MVP sớm.
+4. Không bán P2W làm khách luôn hài lòng.
+
+## USP cần bảo vệ
+
+Buffet lỗ/lãi phải cảm nhận được qua quyết định giá vé + menu quầy.
