@@ -5,25 +5,30 @@ alwaysApply: true
 
 # MVP Scope Lock
 
-Nguồn: `docs/01-nghien-cuu-kha-thi-game-quan-lau.md`
+Nguồn: `docs/03-bao-cao-thiet-ke-hoan-thien.md` v1.1 · `docs/01`
 
 ## Được làm (P0)
 
-- 1 quán cuối ngõ, 6–8 bàn
-- Chủ quán điều khiển trực tiếp + staff auto cơ bản
-- Buffet cơ bản + gọi món (order pipeline)
-- Kho hết hàng, báo cáo ngày, nợ tối thiểu
-- 5 nhóm khách; cảm xúc số (hài lòng / kiên nhẫn)
-- Quest Chương 1 (gia đình trả nợ)
+- Playtest **Godot 4 Web** (thư mục `godot/`) trước native
+- 1 tiệm gia đình để lại (xuống cấp), 6–8 bàn
+- Click/tap + staff auto cơ bản; art placeholder OK
+- Mua → chuẩn bị (mẻ / sơ chế) → **gọi món** → báo cáo
+- Kho P0 đơn giản (thô/sơ chế, hết món); không FEFO đầy đủ
+- Vay nợ đầu game; trả nợ; báo cáo ngày
+- Clear Ch.1: trả hết nợ + Cash ≥ `V_clear` + quest nâng cấp → hook Ch.2
+- Cảm xúc số; AI C0/C1 (nhóm khách có thể rút gọn trên web v0)
 
-## Không làm trong MVP (từ chối hoặc chuyển P2)
+## Không làm trong MVP
 
+- **Buffet** (mọi bậc) — chỉ sau Ch.1 / mở rộng / lựa chọn quest danh tiếng Ch.2+ khi có CR
 - Chuỗi chi nhánh, bản đồ thành phố, multiplayer
 - DLC đa quốc gia, photoreal, season pass phức tạp
-- LLM cho mọi hành động khách (chỉ C2 theo event)
+- LLM mọi hành động khách (C2 = P1 theo event)
+- Inventory lot/FEFO đầy đủ (P1)
+- Sandbox thay cho Chương 2 ngay sau clear Ch.1
 
 ## Khi user yêu cầu ngoài P0
 
 1. Nêu rõ feature thuộc P1/P2.
 2. Đề xuất phiên bản P0 hẹp hơn nếu có.
-3. Không implement P2 trừ khi user xác nhận change request tường minh.
+3. Không implement P2 / buffet sớm trừ change request tường minh.

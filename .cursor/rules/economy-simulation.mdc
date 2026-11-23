@@ -1,25 +1,32 @@
 ---
-description: Quy tắc kinh tế buffet/gọi món và hệ thống nợ
+description: Quy tắc kinh tế gọi món và hệ thống nợ (buffet ngoài MVP)
 globs: "**/*{Economy,Buffet,Finance,Debt,Inventory,Order}*"
 alwaysApply: false
 ---
 
 # Economy Simulation
 
-## Công thức cốt lõi
+## Công thức cốt lõi (MVP)
 
 - `Profit = Revenue - Expenses`
-- Revenue = buffet tickets + à la carte + drinks
-- Expenses = ingredients + staff + ops + marketing + spoilage
-- Buffet: doanh thu theo **vé**; chi phí theo **lượng tiêu thụ thực**
+- Revenue = à la carte + drinks (**không** vé buffet trong MVP)
+- Expenses = ingredients + staff + ops + spoilage (+ lãi vay nếu có)
+- Nợ: vay khởi đầu; theo dõi `DebtRemaining`; clear Ch.1 cần = 0
+- Vốn clear: `Cash >= V_clear` (`V_clear` data-driven)
+
+## Buffet (P1+ / Ch.2 — khi có CR)
+
+- Doanh thu theo **vé**; COGS theo **tiêu thụ thực**
+- Không gộp công thức với à la carte
+- Không implement trong build MVP
 
 ## Bắt buộc khi sửa economy
 
 1. Cập nhật / thêm unit test số (Edit Mode nếu Unity).
 2. Không hard-code “luôn lời” hoặc cheat cảm xúc.
-3. Nợ định kỳ: áp lực gameplay, không game-over cứng ở MVP sớm.
+3. Nợ: áp lực gameplay; clear Ch.1 = trả hết (không chỉ một kỳ).
 4. Không bán P2W làm khách luôn hài lòng.
 
 ## USP cần bảo vệ
 
-Buffet lỗ/lãi phải cảm nhận được qua quyết định giá vé + menu quầy.
+Quyết định prep + gọi món + đường trả hết nợ phải cảm nhận được qua số liệu ngày.

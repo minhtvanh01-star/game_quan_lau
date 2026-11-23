@@ -1,0 +1,208 @@
+[gd_scene load_steps=2 format=3 uid="uid://tiemlau_main"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.09, 0.08, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="HUD" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HudDay" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ngày 1"
+
+[node name="HudPhase" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pha: Chuẩn bị"
+
+[node name="HudCash" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tiền: 0"
+
+[node name="HudDebt" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nợ: 0"
+
+[node name="HudVClear" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "V_clear: 3000"
+
+[node name="HudTime" type="Label" parent="Root/HUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Thời gian: —"
+
+[node name="HudInv" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Kho"
+
+[node name="ClearBanner" type="Label" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1, 0.5, 1)
+text = "★ CHƯƠNG 1 CLEAR — sang Chương 2 (danh tiếng) ★"
+horizontal_alignment = 1
+
+[node name="Mid" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Left" type="VBoxContainer" parent="Root/Mid"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 0)
+theme_override_constants/separation = 6
+
+[node name="PrepTitle" type="Label" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Chuẩn bị / Thao tác"
+
+[node name="BtnBuyMeat" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Mua thịt thô x5 (−200)"
+
+[node name="BtnBuyVeg" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Mua rau thô x5 (−100)"
+
+[node name="BtnCook" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Nấu 1 mẻ nước lẩu"
+
+[node name="BtnPrepMeat" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Thái thịt x3"
+
+[node name="BtnPrepVeg" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Sơ chế rau x3"
+
+[node name="BtnOpen" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "▶ Mở cửa"
+
+[node name="BtnDeliver" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Mang món READY (tay)"
+
+[node name="BtnClose" type="Button" parent="Root/Mid/Left"]
+layout_mode = 2
+text = "Đóng cửa sớm"
+
+[node name="QuestBox" type="RichTextLabel" parent="Root/Mid/Left"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = false
+scroll_active = true
+text = "Quest"
+
+[node name="Floor" type="Control" parent="Root/Mid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+clip_contents = true
+
+[node name="Right" type="VBoxContainer" parent="Root/Mid"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 0)
+
+[node name="LogTitle" type="Label" parent="Root/Mid/Right"]
+layout_mode = 2
+text = "Nhật ký"
+
+[node name="LogBox" type="RichTextLabel" parent="Root/Mid/Right"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+scroll_following = true
+text = ""
+
+[node name="ReportPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -180.0
+offset_right = 220.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReportVBox" type="VBoxContainer" parent="ReportPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ReportLabel" type="RichTextLabel" parent="ReportPanel/ReportVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = false
+text = "Báo cáo"
+
+[node name="BtnPay200" type="Button" parent="ReportPanel/ReportVBox"]
+layout_mode = 2
+text = "Trả nợ 200"
+
+[node name="BtnPayAll" type="Button" parent="ReportPanel/ReportVBox"]
+layout_mode = 2
+text = "Trả hết nợ (trong khả năng)"
+
+[node name="BtnNextDay" type="Button" parent="ReportPanel/ReportVBox"]
+layout_mode = 2
+text = "Ngày tiếp theo"
+
+[connection signal="pressed" from="Root/Mid/Left/BtnBuyMeat" to="." method="_on_buy_meat"]
+[connection signal="pressed" from="Root/Mid/Left/BtnBuyVeg" to="." method="_on_buy_veg"]
+[connection signal="pressed" from="Root/Mid/Left/BtnCook" to="." method="_on_cook_soup"]
+[connection signal="pressed" from="Root/Mid/Left/BtnPrepMeat" to="." method="_on_prep_meat"]
+[connection signal="pressed" from="Root/Mid/Left/BtnPrepVeg" to="." method="_on_prep_veg"]
+[connection signal="pressed" from="Root/Mid/Left/BtnOpen" to="." method="_on_open_pressed"]
+[connection signal="pressed" from="Root/Mid/Left/BtnDeliver" to="." method="_on_deliver"]
+[connection signal="pressed" from="Root/Mid/Left/BtnClose" to="." method="_on_close_now"]
+[connection signal="meta_clicked" from="Root/Mid/Left/QuestBox" to="." method="_on_quest_meta_clicked"]
+[connection signal="draw" from="Root/Mid/Floor" to="." method="_on_floor_draw"]
+[connection signal="pressed" from="ReportPanel/ReportVBox/BtnPay200" to="." method="_on_pay_debt_200"]
+[connection signal="pressed" from="ReportPanel/ReportVBox/BtnPayAll" to="." method="_on_pay_debt_all"]
+[connection signal="pressed" from="ReportPanel/ReportVBox/BtnNextDay" to="." method="_on_next_day"]

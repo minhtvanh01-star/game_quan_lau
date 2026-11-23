@@ -1,0 +1,51 @@
+---
+description: Hỏi làm rõ và thống nhất trước khi làm khi yêu cầu mơ hồ hoặc lệch scope
+alwaysApply: true
+---
+
+# Clarify Before Act
+
+## Nguyên tắc
+
+Khi chưa hiểu đủ ý người yêu cầu (user hoặc thành viên team qua chat/issue/PR), **dừng đoán nặng** → hỏi ngắn → chốt thống nhất → mới implement / viết doc lớn / đổi hướng sản phẩm.
+
+Ưu tiên **làm đúng ý** hơn **làm nhanh theo giả định**.
+
+## Bắt buộc hỏi khi
+
+- Mục tiêu, phạm vi, hoặc tiêu chí xong **không rõ**
+- Có **≥2 cách hiểu** hợp lệ (đặc biệt art/engine, P0 vs P1)
+- Yêu cầu **mâu thuẫn** docs khóa (`docs/03`, `docs/01`, MVP scope) hoặc mâu thuẫn giữa nhiều người
+- Đụng quyết định còn mở (art 2D/3D, Godot/Unity, tên thương mại) hoặc đề xuất **buffet trong MVP** (đã khóa ngoài P0 — phải hỏi CR)
+- Thay đổi economy, nợ, AI C2, hoặc mở P2
+- “Làm giống X / hoàn thiện / cải thiện” mà không nói X là gì, mức độ nào
+
+## Không hỏi vòng vo khi
+
+- Việc nhỏ, rõ, trong P0 đã khóa (typo, rename, test fail rõ nguyên nhân)
+- User đã chọn phương án tường minh trong tin nhắn
+- Chỉ thiếu chi tiết kỹ thuật có thể suy ra an toàn từ docs khóa — ghi giả định 1 dòng rồi làm
+
+## Cách hỏi (bắt buộc)
+
+1. **Nêu lại hiểu hiện tại** 1–2 câu (“Mình hiểu là… đúng không?”).
+2. **Liệt kê điểm mơ hồ** — tối đa 3–5 câu hỏi/lượt; gom một lần, không nhỏ giọt.
+3. Mỗi câu có **phương án A/B** (hoặc “giữ docs / đổi”) + **đề xuất mặc định** gắn P0 nếu được.
+4. Nếu nhiều người lệch ý: nêu khác biệt → xin **một quyết định chốt** (ai sở hữu sản phẩm).
+5. Sau khi user trả lời: **tóm tắt thống nhất** 3–6 gạch đầu dòng → chỉ làm theo bản đó.
+
+## Mẫu ngắn
+
+```text
+Hiểu: …
+Chưa rõ: (1) … (2) …
+Đề xuất mặc định (P0): …
+Xác nhận giúp trước khi làm?
+```
+
+## Cấm
+
+- Tự ý đổi hướng đã khóa trong `docs/03` / MVP scope mà không hỏi
+- Implement P1/P2 “cho sẵn” khi user chưa xác nhận
+- Giả định thay cho câu hỏi khi rủi ro scope/economy/AI cao
+- Hỏi >5 câu một lần hoặc hỏi lại điều user vừa chốt

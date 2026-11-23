@@ -1,0 +1,27 @@
+# Godot 4
+godot/.godot/
+godot/.import/
+godot/**/*.translation
+godot/export/
+godot/builds/
+godot/*.apk
+godot/*.aab
+godot/*.ipa
+godot/*.wasm
+godot/*.pck
+godot/.mono/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+*.user
+.vs/
+.idea/
+
+# Secrets
+.env
+.env.*
+**/google-services.json
+**/*.pem
+**/*.p12
+**/secrets/

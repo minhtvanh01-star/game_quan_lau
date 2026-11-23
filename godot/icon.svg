@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#5c3d2e"/>
+  <circle cx="64" cy="70" r="36" fill="#c45c26"/>
+  <ellipse cx="64" cy="58" rx="28" ry="10" fill="#f0e6d8" opacity="0.85"/>
+  <text x="64" y="118" text-anchor="middle" font-size="14" fill="#f5e6d3" font-family="sans-serif">Lẩu</text>
+</svg>
